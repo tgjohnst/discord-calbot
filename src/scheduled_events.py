@@ -45,7 +45,7 @@ class ScheduledEvents:
                 
                 
 async def test():
-    abc = await ScheduledEvents.list_guild_events(907946271946440745)
+    abc = await ScheduledEvents.list_guild_events(907946271946440745) #TODO change this to our client ID
     abc = json.dumps(abc, indent=2)
     print(abc)
     

@@ -8,9 +8,9 @@ from discord.ext import commands
 from dotenv import load_dotenv
 from scheduled_events import ScheduledEvents
 
-#TODO drop all the following setup stuff to __main__() if we can
-
-# Configure discord intents: Messages (respond to bot commands), scheduled events (see calendar event updates)
+# Configure discord intents: 
+  # Messages (respond to bot commands)
+  # Scheduled events (see and respond to calendar event updates)
 intents = discord.Intents(messages=True, guild_scheduled_events=True)
 
 # Get discord auth info
@@ -47,7 +47,12 @@ def write_ical_to_s3():
 ##########################
 
 async def update_ical():
-
+    # get discord events (await ScheduledEvent.listScheduledEvents())
+    # ical_events = [parse_discord_to_ical(event) for event in sevents]
+    # ical_obj = create_ical(ical_events)
+    # connect to s3 (read in creds, test conn, etc, using... boto3?) and return conn object
+    # write_ical_to_s3(ical_obj, s3_conn)
+    raise NotImplementedError #TODO
 
 
 ########################
@@ -77,10 +82,12 @@ async def on_scheduled_event_update(before, after):
 @bot.event
 async def on_scheduled_event_user_add(event, user):
     pass #TODO
+    # might not need to update the ics every time someone expresses interest in an event, we just care about the event itself
 
 @bot.event
 async def on_scheduled_event_user_remove(event, user):
     pass #TODO
+    # might not need to update the ics every time someone withdraws from an event, we just care about the event itself
 
 ######################
 #### Bot Commands ####
