@@ -31,18 +31,17 @@ bot = commands.Bot(command_prefix='!cal ')
 ################################
 
 def parse_discord_to_ical(sevent: discord.ScheduledEvent):
-    #TODO
-    raise NotImplementedError
+    raise NotImplementedError #TODO
 
 def create_ical():
-    #TODO
-    raise NotImplementedError
+    raise NotImplementedError #TODO
 
 def write_ical_to_s3():
-    #TODO
-    raise NotImplementedError
+    raise NotImplementedError #TODO
 
+#######################
 #### System events ####
+#######################
 
 # Triggered when the bot first connects
 @bot.event
@@ -51,11 +50,24 @@ async def on_ready():
     print('------')
     #TODO make this more verbose?
 
+###################################
 #### Scheduled event... events ####
+###################################
+@bot.event
+async def on_scheduled_event_create(event):
+    raise NotImplementedError #TODO
+async def on_scheduled_event_delete(event):
+    raise NotImplementedError #TODO
+async def on_scheduled_event_update(before, after):
+    raise NotImplementedError #TODO
+async def on_scheduled_event_user_add(event, user):
+    raise NotImplementedError #TODO
+async def on_scheduled_event_user_remove(event, user):
+    raise NotImplementedError #TODO
 
-
-
+######################
 #### Bot Commands ####
+######################
 
 # Trigger a manual calendar update
 @bot.command(name='refresh', help='Trigger a manual refresh of the google calendar file. This should not be necessary.')
