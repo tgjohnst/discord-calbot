@@ -16,3 +16,6 @@ This bot is written for python 3.10+. See requirements.txt for all required pack
 
 ## Helpful references
 https://realpython.com/how-to-make-a-discord-bot-python/
+
+https://github.com/Fortex365/Barmaid/blob/main/barmaid/scheduled_events.py
+
