@@ -6,11 +6,13 @@ The scope of this bot is simply to maintain a consistently-updated ics file that
 
 The bot will run in python, using a client-polling approach and function wrappers. It will be hosted on (???). ical files will be output to (???) using (???).
 
-
 ## Requirements
-- python 3.10
+- python 3.10+
 - discord.py (https://discordpy.readthedocs.io/en/stable/)
 - ics.py (https://icspy.readthedocs.io/en/stable/)
+
+# Installation
+`pip install -r requirements.txt`
 
 ## Helpful references
 https://realpython.com/how-to-make-a-discord-bot-python/
