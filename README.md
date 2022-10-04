@@ -6,10 +6,10 @@ The scope of this bot is simply to maintain a consistently-updated ics file that
 
 The bot will run in python, using a client-polling approach and function wrappers. It will be hosted on (???). ical files will be output to (???) using (???).
 
+*Unfortunately, the scheduled events API is not fully implemented in discord.py, so there is no way to call the `list_scheduled_events` endpoint within that framework. For an example of how else you might interact with scheduled events using discord.py, see [deprecated/discord_py_bot.py](deprecated/discord_py_bot.py)*
+
 ## Requirements
-- python 3.10+
-- discord.py (https://discordpy.readthedocs.io/en/stable/)
-- ics.py (https://icspy.readthedocs.io/en/stable/)
+This bot is written for python 3.10+. See requirements.txt for all required packages.
 
 # Installation
 `pip install -r requirements.txt`
