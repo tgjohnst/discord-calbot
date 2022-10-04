@@ -1,3 +1,4 @@
-discord.py
+# Python packages
+#discord.py
 ics
 python-dotenv
