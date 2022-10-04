@@ -6,6 +6,7 @@ import ics
 import discord
 from discord.ext import commands
 from dotenv import load_dotenv
+from scheduled_events import ScheduledEvents
 
 #TODO drop all the following setup stuff to __main__() if we can
 
@@ -14,7 +15,9 @@ intents = discord.Intents(messages=True, guild_scheduled_events=True)
 
 # Get discord auth info
 load_dotenv()
-TOKEN = os.getenv('DISCORD_TOKEN')
+TOKEN:str = os.getenv('DISCORD_TOKEN')
+CLIENT_ID:str = os.getenv('DISCORD_CLIENT_ID')
+CAL_ICS_URL:str = os.getenv('CALENDAR_ICS_URL')
 
 # Commands will be of the form: "!cal {command}"
 bot = commands.Bot(command_prefix='!cal ')
@@ -39,31 +42,45 @@ def create_ical():
 def write_ical_to_s3():
     raise NotImplementedError #TODO
 
-#######################
-#### System events ####
-#######################
+##########################
+#### Scheduled Events ####
+##########################
+
+async def update_ical():
+
+
+
+########################
+#### Event Handlers ####
+########################
 
 # Triggered when the bot first connects
 @bot.event
 async def on_ready():
     print(f'Logged in as {bot.user} (ID: {bot.user.id})')
-    print('------')
-    #TODO make this more verbose?
+    print('------') #TODO make this more verbose?
 
-###################################
-#### Scheduled event... events ####
-###################################
+# Scheduled event event handlers
+
 @bot.event
 async def on_scheduled_event_create(event):
     raise NotImplementedError #TODO
+
+@bot.event
 async def on_scheduled_event_delete(event):
     raise NotImplementedError #TODO
+
+@bot.event
 async def on_scheduled_event_update(before, after):
     raise NotImplementedError #TODO
+
+@bot.event
 async def on_scheduled_event_user_add(event, user):
-    raise NotImplementedError #TODO
+    pass #TODO
+
+@bot.event
 async def on_scheduled_event_user_remove(event, user):
-    raise NotImplementedError #TODO
+    pass #TODO
 
 ######################
 #### Bot Commands ####

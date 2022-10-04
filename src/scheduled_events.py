@@ -4,22 +4,13 @@ import asyncio
 import aiohttp
 import ics
 
-from dotenv import load_dotenv
-
 class ScheduledEvents:
     """Class connected to discord endpoint via http to communicate with it.
     """
     
-    GUILD_ONLY = 2
-    STAGE_INSTANCE = 1
-    VOICE = 2
-    EXTERNAL = 3
-    
-    load_dotenv()
     TOKEN:str = os.getenv('DISCORD_TOKEN')
-    GUILD:int = os.getenv('DISCORD_GUILD')
-    CLIENT_ID:int = os.getenv('DISCORD_CLIENT_ID')
-    BOT:str = "https://discord.com/oauth2/authorize?client_id=" + str(CLIENT_ID)
+    CLIENT_ID:str = os.getenv('DISCORD_CLIENT_ID')
+    BOT:str = "https://discord.com/oauth2/authorize?client_id=" + CLIENT_ID
     API_URL:str = "https://discord.com/api/v8"
     
     AUTH_HEADERS:dict = {
