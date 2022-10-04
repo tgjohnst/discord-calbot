@@ -58,6 +58,7 @@ async def update_ical():
 ########################
 #### Event Handlers ####
 ########################
+#TODO break this out into a separate events.py file so we can clean up the codebase a bit?
 
 # Triggered when the bot first connects
 @bot.event
