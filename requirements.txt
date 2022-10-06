@@ -2,3 +2,6 @@
 #discord.py
 ics
 python-dotenv
+json
+asyncio
+aiohttp
