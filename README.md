@@ -1,6 +1,8 @@
 # discord-calbot
 A simple Discord bot to poll scheduled events on a server/guild, convert them to ics, and push that ics to a consistent place.
 
+### 4/22/24: This project was never completed due to lack of implementation of the scheduled events API at the time I worked on it. Perhaps I'll come back to it in the future.
+
 ## Approach
 The scope of this bot is simply to maintain a consistently-updated ics file that guild members can subscribe to so that events appear on their calendar of choice with the correct time and description. At the time of its initial design, there is no intent to build in functionality for pushing calendar events back to discord, outputting to any other formats besides ics, filtering for specific subsets of events, etc.
 
